@@ -50,6 +50,13 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+
+    // clarification:   
+    // 1. return empty list if no correct combination sum
+    // 2. array should be distinct integers
+    // 3. return unique combinations any order
+    // 4. the same number may be chsen form candidates an unlimited number of times. nut the combination is unique.
+
 class Solution {
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
