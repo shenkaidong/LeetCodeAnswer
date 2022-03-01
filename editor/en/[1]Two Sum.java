@@ -43,9 +43,30 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+// clarification
+// 1. Does this Array have duplicate numbers?
+// 2. Does this Array sorted or not?
+// 3. Does this has mutiplal solutions?
+// 4. Can I use the same element twice?
+// 5. if I do not find the correct answer, what should I return?
+
+// Hashmap to solve, Time O(n), Spece O(n)
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-        
+        HashMap<Integer, Integer> map = new HashMap<>();
+        // put each element to the Hashmap
+        for (int i = 0; i < nums.length; i++) {
+            map.putIfAbsent(nums[i], i);
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            // We need concider that the same element do not allow use twice, so here we need to compare the index
+            if (map.containsKey(target - nums[i]) && map.get(target - nums[i]) != i) {
+                return new int[] {i, map.get(target - nums[i])};
+            }
+
+        }
+        return new int[0];
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
