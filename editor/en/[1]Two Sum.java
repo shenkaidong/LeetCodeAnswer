@@ -46,7 +46,7 @@
 // clarification
 // 1. Does this Array have duplicate numbers?
 // 2. Does this Array sorted or not?
-// 3. Does this has mutiplal solutions?
+// 3. Does this have multiple solutions?
 // 4. Can I use the same element twice?
 // 5. if I do not find the correct answer, what should I return?
 
@@ -60,7 +60,7 @@ class Solution {
         }
 
         for (int i = 0; i < nums.length; i++) {
-            // We need concider that the same element do not allow use twice, so here we need to compare the index
+            // We need to consider that the same element do not allow use twice, so here we need to compare the index
             if (map.containsKey(target - nums[i]) && map.get(target - nums[i]) != i) {
                 return new int[] {i, map.get(target - nums[i])};
             }
