@@ -46,7 +46,7 @@
 // 1. dose this string s could be empty?
 
 // I will use string function replace to handle this issue.
-// T O(n), S O(1) do not use extra space except an int number
+// T O(n^2), S O(1) do not use extra space except an int number
 class Solution {
     public boolean isValid(String s) {
         // the size must record. can't use s.length() in for loop
@@ -67,5 +67,5 @@ class Solution {
         return s.isEmpty();
     }
 }
-// replaceAll time complexity is O(n), so replace T O(1)
+// replaceAll time complexity is O(n), replace also T O(n)
 //leetcode submit region end(Prohibit modification and deletion)
