@@ -35,29 +35,33 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+// clarification
+// 1. array sorted or not?
+// 2. what should I return, an int?
+// 3. if the input array does not contain the target number, what should I return?
+// 4. how large is this array? do I need to consider out of boundary
+
+// T O(logn) S O(1)
 class Solution {
     public int search(int[] nums, int target) {
-
         if (nums == null || nums.length == 0) return -1;
 
-        int left = 0;
-        int right = nums.length - 1;
-
-        while (left < right - 1) {
-            int mid = (right - left)/2 + left;
-            if (nums[mid] <= target) {
-                left = mid;
+        int lo  = 0;
+        int hi = nums.length - 1;
+        while (hi > lo + 1) {
+            int mid = (hi - lo)/2 + lo;
+            if (target >= nums[mid]) {
+                lo = mid;
             } else {
-                right = mid;
+                hi = mid;
             }
         }
 
-        if (nums[left] == target) {
-            return left;
-        } else if (nums[right] == target) {
-            return right;
-        }
-        return -1;
+        if (target == nums[lo]) {
+            return lo;
+        } else if (target == nums[hi]) {
+            return hi;
+        } else return -1;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
