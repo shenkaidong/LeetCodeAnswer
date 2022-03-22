@@ -56,6 +56,7 @@ class Solution {
         if (root == null) return res;
         Queue<TreeNode> q = new LinkedList<>();
         q.offer(root);
+
         while (!q.isEmpty()) {
             List<Integer> list = new ArrayList<>();
             int size = q.size();
