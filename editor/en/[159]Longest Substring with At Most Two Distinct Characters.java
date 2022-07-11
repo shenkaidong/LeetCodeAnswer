@@ -30,6 +30,9 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
+
+// Here we can not put start++; inside of else.
+// Because if we do this way, when end touch to the s.length(), start will never change
 class Solution {
     public int lengthOfLongestSubstringTwoDistinct(String s) {
         int[] smap = new int[256];
